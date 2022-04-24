@@ -1,0 +1,17 @@
+{
+    "compileOnSave": true,
+    "compilerOptions": {
+        "allowSyntheticDefaultImports": true,
+        "allowUnreachableCode": false,
+        "declaration": false,
+        "experimentalDecorators": true,
+        "lib": ["DOM", "ES2017"],
+        "jsx": "react",
+        "jsxFactory": "h",
+        "module": "ESNext",
+        "moduleResolution": "Node",
+        "target": "ES2017"
+    },
+    "include": ["src"],
+    "exclude": ["node_modules"]
+}
