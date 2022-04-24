@@ -1,7 +1,7 @@
 import { Config } from '@stencil/core';
 
 export const config: Config = {
-    namespace: 'stencil-components',
+    namespace: 'microfrontend-components',
     srcDir: 'src',
     taskQueue: 'async',
     outputTargets: [

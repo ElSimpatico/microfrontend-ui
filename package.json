@@ -1,12 +1,12 @@
 {
-    "name": "stencil-template",
+    "name": "@microfrontend/ui-core",
     "version": "0.0.0",
-    "description": "Stencil project template",
+    "description": "Microfrontend library components",
     "main": "./dist/index.cjs.js",
     "module": "./dist/index.js",
     "collection": "./dist/collection/collection-manifest.json",
     "types": "./dist/types/components.d.ts",
-    "repository": "https://github.com/ElSimpatico/stencil-template.git",
+    "repository": "https://github.com/ElSimpatico/microfrontend-ui.git",
     "author": "Aaron Velasco Lopez <tiquismiquisss@gmail.com>",
     "license": "MIT",
     "scripts": {
