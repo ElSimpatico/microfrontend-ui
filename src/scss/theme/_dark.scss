@@ -1,0 +1,28 @@
+@use '../abstract/variables';
+
+$color: (
+    text: (
+        body: variables.$color-neutral-white,
+        helloWorld: (
+            default: variables.$color-neutral-white,
+        ),
+    ),
+    background: (
+        body: variables.$color-neutral-black,
+        helloWorld: (
+            default: variables.$color-neutral-darkGray,
+        ),
+    ),
+);
+
+$breakpoint: (
+    s: 320px,
+    m: 764px,
+    l: 1016px,
+    xl: 1436px,
+);
+
+$theme: (
+    color: $color,
+    breakpoint: $breakpoint,
+);

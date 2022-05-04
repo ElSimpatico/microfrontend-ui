@@ -1,0 +1,19 @@
+html {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    background-color: var(--color-background-body);
+    color: var(--color-background-text);
+}
+*,
+*::before,
+*::after {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}

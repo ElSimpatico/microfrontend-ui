@@ -1,0 +1,45 @@
+@use 'sass:list';
+
+@use './light';
+@use './dark';
+
+@function is-map($variable) {
+    @return type-of($variable) == 'map';
+}
+
+@function createThemeAux($theme, $list, $accunKey) {
+    $nextList: $list;
+    @if (is-map($theme)) {
+        @each $key, $value in $theme {
+            $nextKey: #{$accunKey}-#{$key};
+            $nextList: list.join(
+                $nextList,
+                createThemeAux($value, $list, $nextKey)
+            );
+        }
+    } @else {
+        $nextList: list.append($list, ($accunKey $theme));
+    }
+    @return $nextList;
+}
+
+@function createTheme($theme) {
+    @return createThemeAux($theme, [], '-');
+}
+
+@mixin createThemeVariables($theme) {
+    $currentTheme: createTheme($theme);
+    @each $key, $value in $currentTheme {
+        #{$key}: #{$value};
+    }
+}
+
+:root {
+    .theme-light {
+        @include createThemeVariables(light.$theme);
+    }
+
+    .theme-dark {
+        @include createThemeVariables(dark.$theme);
+    }
+}
