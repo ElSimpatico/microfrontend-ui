@@ -10,7 +10,7 @@ it('should render my component', async () => {
 
     expect(page.root).toEqualHtml(`
         <ui-helloworld>
-            <div>
+            <div class="wrapper">
                 <span>Hello World!!</span>
             </div>
         </ui-helloworld>
@@ -25,7 +25,7 @@ it('should render my component with attribute name', async () => {
 
     expect(page.root).toEqualHtml(`
         <ui-helloworld>
-            <div>
+            <div class="wrapper">
                 <span>Hello Pedro!!</span>
             </div>
         </ui-helloworld>
