@@ -1,4 +1,3 @@
-// import '../dist/microfrontend-components/microfrontend-components.css';
 import { defineCustomElements } from '../loader';
 
 defineCustomElements();

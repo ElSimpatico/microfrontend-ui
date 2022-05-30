@@ -10,7 +10,12 @@
         "jsxFactory": "h",
         "module": "ESNext",
         "moduleResolution": "Node",
-        "target": "ES2017"
+        "target": "ES2017",
+        "paths": {
+            "@utils": ["./src/utils"]
+        },
+        "rootDir": "src",
+        "baseUrl": "./"
     },
     "include": ["src"],
     "exclude": ["node_modules"]
