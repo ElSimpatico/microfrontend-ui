@@ -6,11 +6,46 @@ $color: (
         helloWorld: (
             default: variables.$color-neutral-black,
         ),
+        button: (
+            primary: (
+                default: variables.$color-neutral-white,
+            ),
+            secondary: (
+                default: variables.$color-neutral-gray,
+            ),
+            tertiary: (
+                default: variables.$color-neutral-gray,
+                active: variables.$color-neutral-black,
+            ),
+        ),
     ),
     background: (
         body: variables.$color-neutral-white,
         helloWorld: (
             default: variables.$color-neutral-lightGray,
+        ),
+        button: (
+            primary: (
+                default: variables.$color-neutral-gray,
+                active: variables.$color-neutral-black,
+            ),
+            secondary: (
+                default: variables.$color-ghost,
+            ),
+            tertiary: (
+                default: variables.$color-ghost,
+            ),
+        ),
+    ),
+    outline: (
+        button: (
+            primary: (
+                default: variables.$color-neutral-gray,
+                active: variables.$color-neutral-black,
+            ),
+            secondary: (
+                active: variables.$color-neutral-black,
+            ),
         ),
     ),
 );
@@ -22,7 +57,23 @@ $breakpoint: (
     xl: 1436px,
 );
 
+$spacing: (
+    '01': 8px,
+    '02': 16px,
+    '03': 24px,
+    '04': 32px,
+    '05': 40px,
+    '06': 48px,
+    '07': 56px,
+    '08': 64px,
+    '09': 72px,
+    '10': 80px,
+    '11': 88px,
+    '12': 96px,
+);
+
 $theme: (
     color: $color,
     breakpoint: $breakpoint,
+    spacing: $spacing,
 );

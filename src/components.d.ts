@@ -5,12 +5,37 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
+import { ButtonVariantType } from './components/atoms/button/button-props';
 export namespace Components {
+    interface UiButton {
+        /**
+         * Class button
+         * @default ""
+         */
+        class: string;
+        /**
+         * Disable button
+         * @default false
+         */
+        disabled: boolean;
+        /**
+         * Button variant
+         * @default primary
+         */
+        variant: ButtonVariantType;
+    }
     interface UiHelloworld {
         name: string;
     }
 }
 declare global {
+    interface HTMLUiButtonElement
+        extends Components.UiButton,
+            HTMLStencilElement {}
+    var HTMLUiButtonElement: {
+        prototype: HTMLUiButtonElement;
+        new (): HTMLUiButtonElement;
+    };
     interface HTMLUiHelloworldElement
         extends Components.UiHelloworld,
             HTMLStencilElement {}
@@ -19,14 +44,33 @@ declare global {
         new (): HTMLUiHelloworldElement;
     };
     interface HTMLElementTagNameMap {
+        'ui-button': HTMLUiButtonElement;
         'ui-helloworld': HTMLUiHelloworldElement;
     }
 }
 declare namespace LocalJSX {
+    interface UiButton {
+        /**
+         * Class button
+         * @default ""
+         */
+        class?: string;
+        /**
+         * Disable button
+         * @default false
+         */
+        disabled?: boolean;
+        /**
+         * Button variant
+         * @default primary
+         */
+        variant?: ButtonVariantType;
+    }
     interface UiHelloworld {
         name?: string;
     }
     interface IntrinsicElements {
+        'ui-button': UiButton;
         'ui-helloworld': UiHelloworld;
     }
 }
@@ -34,6 +78,8 @@ export { LocalJSX as JSX };
 declare module '@stencil/core' {
     export namespace JSX {
         interface IntrinsicElements {
+            'ui-button': LocalJSX.UiButton &
+                JSXBase.HTMLAttributes<HTMLUiButtonElement>;
             'ui-helloworld': LocalJSX.UiHelloworld &
                 JSXBase.HTMLAttributes<HTMLUiHelloworldElement>;
         }
