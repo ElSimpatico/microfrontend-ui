@@ -10,13 +10,14 @@
     "author": "Aaron Velasco Lopez <tiquismiquisss@gmail.com>",
     "license": "MIT",
     "scripts": {
-        "build": "stencil build",
+        "build": "rm -rf dist && stencil build",
         "lint": "eslint src/ --ext .js,.jsx,.ts,.tsx --quiet --fix --format stylish --color",
         "postinstall": "husky install",
         "prepack": "pinst --disable",
         "postpack": "pinst --enable",
         "test": "stencil test --spec",
-        "storybook": "yarn build && concurrently \"yarn build --watch\" \"start-storybook -p 6006\"",
+        "build:watch": "yarn build --watch",
+        "storybook": "start-storybook -p 6006",
         "build-storybook": "build-storybook"
     },
     "devDependencies": {
@@ -33,7 +34,6 @@
         "@typescript-eslint/eslint-plugin": "^5.20.0",
         "@typescript-eslint/parser": "^5.20.0",
         "babel-loader": "^8.2.5",
-        "concurrently": "^7.1.0",
         "css-loader": "^6.7.1",
         "eslint": "^8.14.0",
         "eslint-config-prettier": "^8.5.0",

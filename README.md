@@ -53,9 +53,13 @@ When you create the new repository from this template you must to change some fi
 
 Build the library components in production mode
 
+`yarn build:watch`
+
+Build the library components and watch files to rebuild if files are updated
+
 `yarn storybook`
 
-Start Storybook locally in **localhost:6006**
+Start Storybook locally in **localhost:6006**. To run this script you have to run `yarn build` or `yarn build:watch` before.
 
 `yarn test`
 
