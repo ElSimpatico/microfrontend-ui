@@ -24,9 +24,6 @@ export namespace Components {
          */
         variant: ButtonVariantType;
     }
-    interface UiHelloworld {
-        name: string;
-    }
 }
 declare global {
     interface HTMLUiButtonElement
@@ -36,16 +33,8 @@ declare global {
         prototype: HTMLUiButtonElement;
         new (): HTMLUiButtonElement;
     };
-    interface HTMLUiHelloworldElement
-        extends Components.UiHelloworld,
-            HTMLStencilElement {}
-    var HTMLUiHelloworldElement: {
-        prototype: HTMLUiHelloworldElement;
-        new (): HTMLUiHelloworldElement;
-    };
     interface HTMLElementTagNameMap {
         'ui-button': HTMLUiButtonElement;
-        'ui-helloworld': HTMLUiHelloworldElement;
     }
 }
 declare namespace LocalJSX {
@@ -66,12 +55,8 @@ declare namespace LocalJSX {
          */
         variant?: ButtonVariantType;
     }
-    interface UiHelloworld {
-        name?: string;
-    }
     interface IntrinsicElements {
         'ui-button': UiButton;
-        'ui-helloworld': UiHelloworld;
     }
 }
 export { LocalJSX as JSX };
@@ -80,8 +65,6 @@ declare module '@stencil/core' {
         interface IntrinsicElements {
             'ui-button': LocalJSX.UiButton &
                 JSXBase.HTMLAttributes<HTMLUiButtonElement>;
-            'ui-helloworld': LocalJSX.UiHelloworld &
-                JSXBase.HTMLAttributes<HTMLUiHelloworldElement>;
         }
     }
 }
