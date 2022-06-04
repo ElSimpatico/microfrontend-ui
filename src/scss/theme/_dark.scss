@@ -3,9 +3,6 @@
 $color: (
     text: (
         body: variables.$color-neutral-white,
-        helloWorld: (
-            default: variables.$color-neutral-white,
-        ),
         button: (
             primary: (
                 default: variables.$color-gunmetal-100,
@@ -21,9 +18,6 @@ $color: (
     ),
     background: (
         body: variables.$color-neutral-black,
-        helloWorld: (
-            default: variables.$color-neutral-darkGray,
-        ),
         button: (
             primary: (
                 default: variables.$color-turquoise-60,
