@@ -17,7 +17,7 @@ export default {
 };
 
 const Template = (args): string =>
-    `<ui-button class=${args.class} disabled=${args.disabled} variant=${args.variant}>
+    ` <ui-button class=${args.class} disabled=${args.disabled} variant=${args.variant}>
         <span>Call to action</span>
     </ui-button>`;
 

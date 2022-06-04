@@ -1,6 +1,26 @@
+const stencilClient = require('@stencil/core/internal/client');
+
 import { defineCustomElements } from '../loader';
 
 defineCustomElements();
+
+const stencilWrapper = (storyFn, context) => {
+    const host = document.createElement('div');
+    stencilClient.renderVdom(
+        {
+            $ancestorComponent$: undefined,
+            $flags$: 0,
+            $modeName$: undefined,
+            $cmpMeta$: {
+                $flags$: 0,
+                $tagName$: 'div',
+            },
+            $hostElement$: host,
+        },
+        storyFn(context),
+    );
+    return host.children[0];
+};
 
 export const parameters = {
     actions: { argTypesRegex: '^on[A-Z].*' },
@@ -20,3 +40,5 @@ export const parameters = {
         ],
     },
 };
+
+export const decorators = [stencilWrapper];
