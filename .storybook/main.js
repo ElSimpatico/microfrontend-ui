@@ -12,7 +12,6 @@ module.exports = {
     ],
     framework: '@storybook/html',
     webpackFinal: async (config, { configType }) => {
-        console.log(config.module.rules);
         config.resolve.alias = {
             ...config.resolve.alias,
             '@utils': resolve(__dirname, '../src/utils/'),

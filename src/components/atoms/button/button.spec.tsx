@@ -1,11 +1,6 @@
 import { h } from '@stencil/core';
 import { newSpecPage } from '@stencil/core/testing';
 import { Button } from './button';
-import { buttonVariants } from './button-props';
-
-it('should has properties', async () => {
-    expect(buttonVariants).toBeTruthy();
-});
 
 it('should render primary button', async () => {
     const page = await newSpecPage({
