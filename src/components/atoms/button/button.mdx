@@ -1,9 +1,5 @@
-import {
-    Story,
-    Description,
-    Source,
-    Canvas,
-} from '@storybook/addon-docs/blocks';
+import { Story, Description, Canvas } from '@storybook/addon-docs/blocks';
+
 import Readme from './readme.md';
 
 ## Button Component
@@ -17,3 +13,16 @@ import Readme from './readme.md';
 <Story id="components-button--all-button" />
 
 <Description>{Readme}</Description>
+
+## CSS Theme variables
+
+| Name                                          | Description                                  |
+| --------------------------------------------- | -------------------------------------------- |
+| `--color-text-button-primary-default`         | Text color of a primary button.              |
+| `--color-text-button-secondary-default`       | Text color of a secondary button.            |
+| `--color-text-button-tertiary-default`        | Text color of a tertiary button.             |
+| `--color-text-button-tertiary-active`         | Text color of a tertiary button active.      |
+| `--color-background-button-primary-default`   | Background color of a primary button.        |
+| `--color-background-button-primary-active`    | Background color of a primary button active. |
+| `--color-background-button-secondary-default` | Background color of a tertiary button.       |
+| `--color-background-button-tertiary-default`  | Background color of a tertiary button.       |

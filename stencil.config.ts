@@ -2,6 +2,8 @@ import { Config } from '@stencil/core';
 import { sass } from '@stencil/sass';
 import { resolve } from 'path';
 
+import jestConfig from './jest.config';
+
 export const config: Config = {
     namespace: 'microfrontend-components',
     srcDir: 'src',
@@ -25,4 +27,7 @@ export const config: Config = {
             injectGlobalPaths: ['src/scss/main.scss'],
         }),
     ],
+    testing: {
+        ...jestConfig,
+    },
 };

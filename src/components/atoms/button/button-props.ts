@@ -1,2 +1,1 @@
-export const buttonVariants = ['primary', 'secondary', 'tertiary'] as const;
-export type ButtonVariantType = typeof buttonVariants[number];
+export type ButtonVariantType = 'primary' | 'secondary' | 'tertiary';
