@@ -4,6 +4,8 @@
 import { action } from '@storybook/addon-actions';
 import { h } from '@stencil/core';
 
+import { getKeyValueToString } from '@utils';
+
 import mdx from './button.mdx';
 
 const buttonVariants = ['primary', 'secondary', 'tertiary'];
@@ -17,15 +19,9 @@ export default {
     },
 };
 
-const defaultArgs = (args: any): string => {
-    return Object.keys(args || {})
-        .map((key: string) => `${key}=${args[key]}`)
-        .join(' ');
-};
-
 const codeSnipet = (args): string => `
 // Default Button
-<ui-button ${defaultArgs(args)}>
+<ui-button ${getKeyValueToString(args)}>
     <span>Call to action</span>
 </ui-button>`;
 
