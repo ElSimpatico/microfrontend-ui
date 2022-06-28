@@ -1,4 +1,4 @@
-import { getClassName } from './common';
+import { getClassName, getKeyValueToString } from './common';
 
 it('should return className', () => {
     const className = getClassName({
@@ -18,4 +18,19 @@ it('should return empty className', () => {
     });
 
     expect(className).toBe('');
+});
+
+it('should return key value in string', () => {
+    const keyValueString = getKeyValueToString({
+        propA: 'A',
+        propB: 'B',
+    });
+
+    expect(keyValueString).toBe('propA=A propB=B');
+});
+
+it('should return key value empty', () => {
+    const keyValueString = getKeyValueToString(null);
+
+    expect(keyValueString).toBe('');
 });
