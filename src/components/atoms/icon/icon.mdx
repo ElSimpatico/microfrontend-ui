@@ -1,4 +1,9 @@
-import { Story, Description, Canvas } from '@storybook/addon-docs/blocks';
+import {
+    Story,
+    Description,
+    Canvas,
+    Source,
+} from '@storybook/addon-docs/blocks';
 
 import Readme from './readme.md';
 
@@ -13,3 +18,67 @@ import Readme from './readme.md';
 <Story id="components-icon--all-icons" />
 
 <Description>{Readme}</Description>
+
+## How to contribute icons
+
+The icon component use the `name` attributte to specific which svg to render.
+You can see the following folder directory where:
+
+<Source
+    language="js"
+    dark
+    format={true}
+    code={`
+    components
+    │
+    └───atoms
+    │   │
+    │   └───icon
+    │   │   │
+    │   │   └───svg
+    │   │   │   │   arrow-left.svg
+    │   │   │   │   check.svg
+    │   │   │   │   index.ts
+    │   │   │   │   ...
+    │   │   │
+    │   │   │
+    │   │   │   readme.md
+    │   │   │   icon-props.ts
+    │   │   │   ...
+    │   │   ...
+    │   ...
+  `}
+/>
+
+-   **icon-props.ts:** this file has the definition properties of icon component. Here is where you can add, remove or rename
+    the IconNames enum.
+
+<Source
+    language="ts"
+    dark
+    format={true}
+    code={`
+// icon-props.ts
+export enum IconNames {
+    ArrowLeft = 'ArrowLeft',
+    Check = 'Check',
+}`}
+/>
+
+-   **svg folder:** this folder is where all svg assets are hosted. In the index file exports an object where key is a value of
+    `IconNames` and value is the svg asset referenced.
+
+<Source
+    language="ts"
+    dark
+    format={true}
+    code={`
+// index.ts
+import { IconNames } from '../icon-props';
+import ArrowLeftIcon from './arrow-left.svg';
+import CheckIcon from './check.svg';
+export const SvgIcons: Record<IconNames, string> = { 
+    ArrowLeft: ArrowLeftIcon, 
+    Check: CheckIcon, 
+};`}
+/>
